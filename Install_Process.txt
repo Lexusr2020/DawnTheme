@@ -18,6 +18,7 @@ Set up shopify Dev Enviroment
         origin  https://github.com/Lexusr2020/TestStore.git (push)
 
     git push origin master
+    
         this message will appear
                 Enumerating objects: 3, done.
                 Counting objects: 100% (3/3), done.
