@@ -1,0 +1,104 @@
+Set up shopify Dev Enviroment
+
+- set theme for shopify store
+- create new folder for where theme files will live
+- create README.MD FILE in theme folder
+- git init
+
+----------GitHub-------------------
+- create new repository for working theme
+- on VS Code use powershell terminal
+- run
+    git init          
+    git add .\README.MD   (git add .    -will add all files and folders)
+    git commit -m "message"
+    git remote add origin https://github.com/Lexusr2020/TestStore.git -- hhtps will be different based on the respository
+    git remote -v will list the following 
+        origin  https://github.com/Lexusr2020/TestStore.git (fetch)
+        origin  https://github.com/Lexusr2020/TestStore.git (push)
+
+    git push origin master
+        this message will appear
+                Enumerating objects: 3, done.
+                Counting objects: 100% (3/3), done.
+                Writing objects: 100% (3/3), 253 bytes | 253.00 KiB/s, done.
+                Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+                To https://github.com/Lexusr2020/TestStore.git
+                * [new branch]      master -> master
+
+    check GitHub repository and check all files have been added
+
+
+
+
+-----------Install Choco -------------
+
+    With PowerShell, you must ensure Get-ExecutionPolicy is not Restricted. We suggest using Bypass to bypass the policy to get things installed or AllSigned for quite a bit more security.
+
+    Run Get-ExecutionPolicy. If it returns Restricted, then run Set-ExecutionPolicy AllSigned or Set-ExecutionPolicy Bypass -Scope Process.
+    Now run the following command:
+    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+
+------------Generatin API Credentials-------------
+    shopify story
+        apps    
+            manage private apps
+                enable 
+    
+    create new private app
+        Fill out App details
+    
+    Admin API
+        show all admin permissions
+
+    got to themes section
+        select write read from dropdown
+    
+    Save - read app confimation dialog, then create app
+        Yur new, unique access credentials are visible in the Admin API section. Copy the password. You'll use it next step.
+
+    To get to an already created app go to https://lexdevtest.myshopify.com/admin/apps/private
+    API Key: 2a28ec98ce7867ecc6496987b7d3a7d8
+    password : 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
+
+
+
+-------------- https://shopify.dev/themes/tools/theme-kit/getting-started -----------------
+
+----------Step 3: Connect to an existing theme ------------------------
+
+    theme get --list --password=your-password --store=your-store.myshopify.com
+    themes avaialable will be listed
+    copy the one you want to work on
+
+
+---------------Step 4: Set up your config file---------------------------
+    A config.yml file creates a local connection to your Shopify store’s theme. You can use the previous information you collected (Theme Kit password and theme ID) to create a config.yml file in your theme, and then download the theme locally.
+
+        Steps:
+            Create a directory for your theme:
+            Terminal - mkdir [your-theme-name]
+
+            Navigate to the new directory:
+            Terminal - cd [your-theme-name]
+
+            To download a specific theme, and create the config.yml file that connects this theme with a local version in the directory you just created, run the following command:
+            Terminal - theme get --password=[your-password] --store="[your-store.myshopify.com]" --themeid=[your-theme-id]
+
+
+----------Step 5: Create a new theme ------------------------
+
+    theme new --password=[your-password] --store="[your-store.myshopify.com]" --name=[theme name]
+
+
+------------Step 6: Get theme list-----------------------
+    theme get --list --password=[your-password] --store="[your-store.myshopify.com]"
+
+------------Step 7: Push updates to your theme -----------------------
+    Now that you've established a connection to a Shopify theme, you can run the following command in your theme directory:
+
+    Terminal: theme watch
+
+
+
