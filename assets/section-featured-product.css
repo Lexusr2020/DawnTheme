@@ -11,6 +11,7 @@
 .featured-product .product__media-item {
   padding-left: 0;
   width: 100%;
+
 }
 
 .featured-product .product__media-item:not(:first-child) {
@@ -23,8 +24,9 @@
 }
 
 .background-secondary .featured-product {
-  background: rgb(var(--color-background));
+  background-color: rgb(0, 0, 255);
   padding: 2.5rem;
+
 }
 
 .product__view-details {

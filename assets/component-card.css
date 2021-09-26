@@ -199,6 +199,7 @@
   display: block;
   position: relative;
   text-decoration: none;
+  background-image: url('../assets/images/RTW_backUp.jpg');
 }
 
 .card-wrapper:focus-within .card {
@@ -245,7 +246,7 @@
   left: 0;
   right: 0;
   display: flex;
-  background: transparent;
+  background-color: brown;
   transition: background-color var(--duration-long) ease;
 }
 
